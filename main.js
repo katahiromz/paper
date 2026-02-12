@@ -1,3 +1,7 @@
+// main.js --- Infinity Paper demo
+// Author: katahiromz
+// License: MIT
+
 document.addEventListener('DOMContentLoaded', function(){
   const displayCanvas = document.getElementById('my-canvas');
   const displayCtx = displayCanvas.getContext('2d');
