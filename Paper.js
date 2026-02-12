@@ -70,12 +70,14 @@ class Paper {
     if (left >= curLeft && right <= curRight && top >= curTop && bottom <= curBottom)
       return this;
 
-    // 2. 新しい境界を計算（バッファを追加）
+    // 2. 新しい境界を計算
     const buffer = 256; 
-    const newLeft = (left < curLeft) ? Math.min(left, curLeft - buffer) : curLeft;
-    const newRight = (right > curRight) ? Math.max(right, curRight + buffer) : curRight;
-    const newTop = (top < curTop) ? Math.min(top, curTop - buffer) : curTop;
-    const newBottom = (bottom > curBottom) ? Math.max(bottom, curBottom + buffer) : curBottom;
+    
+    // 拡張が必要な方向（境界を越えた方向）にのみバッファを追加する
+    const newLeft   = (left < curLeft)     ? (left - buffer)   : curLeft;
+    const newRight  = (right > curRight)   ? (right + buffer)  : curRight;
+    const newTop    = (top < curTop)       ? (top - buffer)    : curTop;
+    const newBottom = (bottom > curBottom) ? (bottom + buffer) : curBottom;
 
     const newWidth = newRight - newLeft;
     const newHeight = newBottom - newTop;
