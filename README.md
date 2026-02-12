@@ -1,4 +1,6 @@
-# Infinity Paper by katahiromz
+# Infinity Paper
+
+The idea behind creating this module came from imagining a virtual piece of paper with infinite bounds inside a computer. Of course, real computers have memory limitations.
 
 ## Language
 
