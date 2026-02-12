@@ -6,7 +6,7 @@
 
 ## Demo
 
-- [https://katahiromz/github.io/paper](https://katahiromz/github.io/paper)
+- [https://katahiromz.github.io/paper](https://katahiromz.github.io/paper)
 
 ## License
 
