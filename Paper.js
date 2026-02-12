@@ -71,8 +71,8 @@ class Paper {
       return this;
 
     // 2. 新しい境界を計算
-    const buffer = 256; 
-    
+    const buffer = 128;
+
     // 拡張が必要な方向（境界を越えた方向）にのみバッファを追加する
     const newLeft   = (left < curLeft)     ? (left - buffer)   : curLeft;
     const newRight  = (right > curRight)   ? (right + buffer)  : curRight;
@@ -209,14 +209,14 @@ class Paper {
     // マッチしない場合のフォールバックとして 16px を使用
     const fontSizeMatch = this.font.match(/(\d+(?:\.\d+)?)(px|pt|em|rem|vh|vw|dvh|dvw)/);
     const fontSize = fontSizeMatch ? parseFloat(fontSizeMatch[1]) : 16;
-    
+
     // 配置（Alignment）に応じたx座標のオフセット調整
     let offsetX = 0;
     if (this.textAlign === 'center') offsetX = -textWidth / 2;
     else if (this.textAlign === 'right' || this.textAlign === 'end') offsetX = -textWidth;
 
     // ベースラインに応じたy座標のオフセット調整
-    let offsetY = -fontSize; 
+    let offsetY = -fontSize;
     if (this.textBaseline === 'top') offsetY = 0;
     else if (this.textBaseline === 'middle') offsetY = -fontSize / 2;
     else if (this.textBaseline === 'bottom') offsetY = -fontSize;
