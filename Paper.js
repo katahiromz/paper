@@ -6,6 +6,7 @@
 
 class Paper {
   static g_sizingOnly = false;
+  static g_minimal = false;
 
   constructor(width_ = 1, height_ = 1, bgColor_ = 'white') {
     this.canvas = document.createElement('canvas');
@@ -71,7 +72,7 @@ class Paper {
       return this;
 
     // 2. 新しい境界を計算
-    const buffer = 128;
+    const buffer = (Paper.g_minimal ? 0 : 128);
 
     // 拡張が必要な方向（境界を越えた方向）にのみバッファを追加する
     const newLeft   = (left < curLeft)     ? (left - buffer)   : curLeft;
